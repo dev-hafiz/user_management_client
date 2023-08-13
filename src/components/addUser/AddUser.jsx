@@ -13,6 +13,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
 import { useState } from "react";
 import logo from "../../assets/images/logo.png";
+import Swal from "sweetalert2";
 
 const useStyles = makeStyles({
   girdWrapper: {
@@ -80,7 +81,24 @@ const AddUser = () => {
 
   //handle Create user
   const handleCreateUser = () => {
-    console.log(userInfo);
+    fetch(`http://localhost:5000/users`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          Swal.fire({
+            title: "User Created Successfully",
+            text: "Do you want to continue ❓",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
+      });
   };
 
   return (
