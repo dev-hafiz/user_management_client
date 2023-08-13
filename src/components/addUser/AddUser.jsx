@@ -12,13 +12,14 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
 import { useState } from "react";
+import logo from "../../assets/images/logo.png";
 
 const useStyles = makeStyles({
   girdWrapper: {
     height: "100vh",
   },
   rightBox: {
-    paddingTop: "100px",
+    paddingTop: "60px",
     paddingLeft: "100px",
   },
   leftArea: {
@@ -33,10 +34,11 @@ const useStyles = makeStyles({
     background: "#F3D416",
     padding: "8px 20px",
     outline: "none",
-    border: "2 px solid #545454",
+    border: ".5px solid #585858",
     width: "100%",
     fontSize: "18px",
     marginTop: "16px",
+    cursor: "pointer",
   },
 });
 
@@ -145,16 +147,7 @@ const AddUser = () => {
       </Grid>
       <Grid item xs={12} lg={9}>
         <Box className={classes.rightBox}>
-          <Typography variant="h4" sx={{ color: "#545454" }} gutterBottom>
-            Management System
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{ color: "#545454", fontWeight: "bold", marginBottom: "20px" }}
-            gutterBottom
-          >
-            User can manage his\her information according to role
-          </Typography>
+          <img width="50%" style={{ marginBottom: "30px" }} src={logo} />
 
           <form>
             <Box sx={{ width: "70%" }}>
