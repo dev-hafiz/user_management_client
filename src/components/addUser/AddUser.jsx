@@ -43,6 +43,8 @@ const useStyles = makeStyles({
 const AddUser = () => {
   const classes = useStyles();
 
+  const [gender, setGender] = useState(null);
+  const [isActive, setIsActive] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,7 +53,6 @@ const AddUser = () => {
   });
 
   // form handler
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -59,17 +60,11 @@ const AddUser = () => {
       [name]: value,
     }));
   };
-
   // Radio Handler
-  const [gender, setGender] = useState(null);
-
   const handleRadioChange = (event) => {
     setGender(event.target.value);
   };
-
   // active handler
-  const [isActive, setIsActive] = useState(null);
-
   const handleActiveStatus = (event) => {
     setIsActive(event.target.value);
   };
