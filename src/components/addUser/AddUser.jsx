@@ -11,6 +11,7 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
+import { useState } from "react";
 
 const useStyles = makeStyles({
   girdWrapper: {
@@ -41,6 +42,46 @@ const useStyles = makeStyles({
 
 const AddUser = () => {
   const classes = useStyles();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    age: "",
+    height: "",
+  });
+
+  // form handler
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Radio Handler
+  const [gender, setGender] = useState(null);
+
+  const handleRadioChange = (event) => {
+    setGender(event.target.value);
+  };
+
+  // active handler
+  const [isActive, setIsActive] = useState(null);
+
+  const handleActiveStatus = (event) => {
+    setIsActive(event.target.value);
+  };
+
+  // Get all Data from state
+  const userInfo = {
+    ...formData,
+    gender,
+    isActive,
+  };
+  console.log(userInfo);
+
   return (
     <Grid className={classes.girdWrapper} container spacing={2}>
       <Grid item xs={12} lg={3} className={classes.leftArea}>
@@ -127,6 +168,8 @@ const AddUser = () => {
                 id="outlined-start-adornment"
                 sx={{ m: 1, width: "100%" }}
                 name="name"
+                valye={formData.name}
+                onChange={handleInputChange}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">Name: </InputAdornment>
@@ -138,6 +181,8 @@ const AddUser = () => {
                 id="outlined-start-adornment"
                 sx={{ m: 1, width: "100%" }}
                 name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">Email: </InputAdornment>
@@ -151,6 +196,8 @@ const AddUser = () => {
                     id="outlined-start-adornment"
                     sx={{ m: 1, width: "100%" }}
                     name="age"
+                    valye={formData.age}
+                    onChange={handleInputChange}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">Age: </InputAdornment>
@@ -164,6 +211,8 @@ const AddUser = () => {
                     id="outlined-start-adornment"
                     sx={{ m: 1, width: "100%" }}
                     name="height"
+                    valye={formData.height}
+                    onChange={handleInputChange}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -183,19 +232,20 @@ const AddUser = () => {
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
                     name="row-radio-buttons-group"
+                    onChange={handleRadioChange}
                   >
                     <FormControlLabel
-                      value="female"
+                      value="Female"
                       control={<Radio />}
                       label="Female"
                     />
                     <FormControlLabel
-                      value="male"
+                      value="Male"
                       control={<Radio />}
                       label="Male"
                     />
                     <FormControlLabel
-                      value="other"
+                      value="Other"
                       control={<Radio />}
                       label="Other"
                     />
@@ -209,6 +259,7 @@ const AddUser = () => {
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
                     name="row-radio-buttons-group"
+                    onChange={handleActiveStatus}
                   >
                     <FormControlLabel
                       value="Active"
