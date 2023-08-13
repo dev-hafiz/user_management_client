@@ -77,7 +77,11 @@ const AddUser = () => {
     gender,
     isActive,
   };
-  console.log(userInfo);
+
+  //handle Create user
+  const handleCreateUser = () => {
+    console.log(userInfo);
+  };
 
   return (
     <Grid className={classes.girdWrapper} container spacing={2}>
@@ -149,126 +153,120 @@ const AddUser = () => {
         <Box className={classes.rightBox}>
           <img width="50%" style={{ marginBottom: "30px" }} src={logo} />
 
-          <form>
-            <Box sx={{ width: "70%" }}>
-              <TextField
-                label="Enter your name"
-                id="outlined-start-adornment"
-                sx={{ m: 1, width: "100%" }}
-                name="name"
-                valye={formData.name}
-                onChange={handleInputChange}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">Name: </InputAdornment>
-                  ),
-                }}
-              />
-              <TextField
-                label="Enter your email"
-                id="outlined-start-adornment"
-                sx={{ m: 1, width: "100%" }}
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">Email: </InputAdornment>
-                  ),
-                }}
-              />
-              <Grid container spacing={2}>
-                <Grid item xs={12} lg={6}>
-                  <TextField
-                    label="Enter your age"
-                    id="outlined-start-adornment"
-                    sx={{ m: 1, width: "100%" }}
-                    name="age"
-                    valye={formData.age}
-                    onChange={handleInputChange}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">Age: </InputAdornment>
-                      ),
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} lg={6}>
-                  <TextField
-                    label="Enter your height"
-                    id="outlined-start-adornment"
-                    sx={{ m: 1, width: "100%" }}
-                    name="height"
-                    valye={formData.height}
-                    onChange={handleInputChange}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          Height:{" "}
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                </Grid>
+          <Box sx={{ width: "70%" }}>
+            <TextField
+              label="Enter your name"
+              id="outlined-start-adornment"
+              sx={{ m: 1, width: "100%" }}
+              name="name"
+              valye={formData.name}
+              onChange={handleInputChange}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">Name: </InputAdornment>
+                ),
+              }}
+            />
+            <TextField
+              label="Enter your email"
+              id="outlined-start-adornment"
+              sx={{ m: 1, width: "100%" }}
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">Email: </InputAdornment>
+                ),
+              }}
+            />
+            <Grid container spacing={2}>
+              <Grid item xs={12} lg={6}>
+                <TextField
+                  label="Enter your age"
+                  id="outlined-start-adornment"
+                  sx={{ m: 1, width: "100%" }}
+                  name="age"
+                  valye={formData.age}
+                  onChange={handleInputChange}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">Age: </InputAdornment>
+                    ),
+                  }}
+                />
               </Grid>
-              <Grid sx={{ marginBottom: "8px" }} container spacing={2}>
-                <Grid item xs={12} lg={6}>
-                  <FormLabel id="demo-row-radio-buttons-group-label">
-                    Gender
-                  </FormLabel>
-                  <RadioGroup
-                    row
-                    aria-labelledby="demo-row-radio-buttons-group-label"
-                    name="row-radio-buttons-group"
-                    onChange={handleRadioChange}
-                  >
-                    <FormControlLabel
-                      value="Female"
-                      control={<Radio />}
-                      label="Female"
-                    />
-                    <FormControlLabel
-                      value="Male"
-                      control={<Radio />}
-                      label="Male"
-                    />
-                    <FormControlLabel
-                      value="Other"
-                      control={<Radio />}
-                      label="Other"
-                    />
-                  </RadioGroup>
-                </Grid>
-                <Grid item xs={12} lg={6}>
-                  <FormLabel id="demo-row-radio-buttons-group-label">
-                    Status
-                  </FormLabel>
-                  <RadioGroup
-                    row
-                    aria-labelledby="demo-row-radio-buttons-group-label"
-                    name="row-radio-buttons-group"
-                    onChange={handleActiveStatus}
-                  >
-                    <FormControlLabel
-                      value="Active"
-                      control={<Radio />}
-                      label="Active"
-                    />
-                    <FormControlLabel
-                      value="Inactive"
-                      control={<Radio />}
-                      label="Inactive"
-                    />
-                  </RadioGroup>
-                </Grid>
+              <Grid item xs={12} lg={6}>
+                <TextField
+                  label="Enter your height"
+                  id="outlined-start-adornment"
+                  sx={{ m: 1, width: "100%" }}
+                  name="height"
+                  valye={formData.height}
+                  onChange={handleInputChange}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">Height: </InputAdornment>
+                    ),
+                  }}
+                />
               </Grid>
-              <input
-                className={classes.submitBtn}
-                type="submit"
-                value="Submit"
-              />
-            </Box>
-          </form>
+            </Grid>
+            <Grid sx={{ marginBottom: "8px" }} container spacing={2}>
+              <Grid item xs={12} lg={6}>
+                <FormLabel id="demo-row-radio-buttons-group-label">
+                  Gender
+                </FormLabel>
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-row-radio-buttons-group-label"
+                  name="row-radio-buttons-group"
+                  onChange={handleRadioChange}
+                >
+                  <FormControlLabel
+                    value="Female"
+                    control={<Radio />}
+                    label="Female"
+                  />
+                  <FormControlLabel
+                    value="Male"
+                    control={<Radio />}
+                    label="Male"
+                  />
+                  <FormControlLabel
+                    value="Other"
+                    control={<Radio />}
+                    label="Other"
+                  />
+                </RadioGroup>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <FormLabel id="demo-row-radio-buttons-group-label">
+                  Status
+                </FormLabel>
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-row-radio-buttons-group-label"
+                  name="row-radio-buttons-group"
+                  onChange={handleActiveStatus}
+                >
+                  <FormControlLabel
+                    value="Active"
+                    control={<Radio />}
+                    label="Active"
+                  />
+                  <FormControlLabel
+                    value="Inactive"
+                    control={<Radio />}
+                    label="Inactive"
+                  />
+                </RadioGroup>
+              </Grid>
+            </Grid>
+            <button onClick={handleCreateUser} className={classes.submitBtn}>
+              Create Account{" "}
+            </button>
+          </Box>
         </Box>
       </Grid>
     </Grid>
