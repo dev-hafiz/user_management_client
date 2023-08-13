@@ -1,8 +1,14 @@
-# React + Vite
+# User Management System
+ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+| Frontend              | Backend                   |
+|-----------------------|---------------------------|
+| react                 | Node JS                   |
+| react-router-dom      | Express JS                |
+| firebase              | Middleware & Pareser      |
+| localStorage          | JWT Token                 |
+| react-hot-toast       | MongoDB Datbase           |
+| ...                   | ...                       |
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## User Creation UI
+![Create User Interface](https://i.ibb.co/qmwqcZ9/user-Create.png)
