@@ -12,10 +12,10 @@
 
 ## User Creation UI
 ![Create User Interface](https://i.ibb.co/4Sxg9JK/User-Createation.png)
-![Create Success](https://i.ibb.co/SKvZb2Q/stattus.png)
+![Create Success](https://i.ibb.co/Hn30W4Y/created-User.png)
 
 ## Users From Database
-![Users](https://i.ibb.co/GdMgXnK/Users.png)
+![Users](https://i.ibb.co/SKvZb2Q/stattus.png)
 
 
 | Delete Permission     | Delete Success            |
