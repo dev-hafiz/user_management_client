@@ -1,4 +1,5 @@
 import { Grid, Box, Typography, Paper } from "@mui/material";
+import { useLoaderData } from "react-router-dom";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import { makeStyles } from "@mui/styles";
 import PersonIcon from "@mui/icons-material/Person";
@@ -67,6 +68,8 @@ const useStyles = makeStyles({
 const UpdateUser = () => {
   const classes = useStyles();
 
+  const loadedUser = useLoaderData();
+
   const [gender, setGender] = useState(null);
   const [isActive, setIsActive] = useState(null);
   const [formData, setFormData] = useState({
@@ -103,8 +106,8 @@ const UpdateUser = () => {
 
   //handle Create user
   const handleCreateUser = () => {
-    fetch(`http://localhost:5000/users`, {
-      method: "POST",
+    fetch(`http://localhost:5000/users/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -275,6 +278,7 @@ const UpdateUser = () => {
                   label="Enter first name"
                   id="outlined-start-adornment"
                   sx={{ m: 1, width: "100%" }}
+                  defaultValue={loadedUser.firstName}
                   name="firstName"
                   valye={formData.firstName}
                   onChange={handleInputChange}
@@ -289,6 +293,7 @@ const UpdateUser = () => {
                 <TextField
                   label="Enter last name"
                   id="outlined-start-adornment"
+                  defaultValue={loadedUser.lastName}
                   sx={{ m: 1, width: "100%" }}
                   name="lastName"
                   valye={formData.lastName}
@@ -305,9 +310,10 @@ const UpdateUser = () => {
             <TextField
               label="Enter your email"
               id="outlined-start-adornment"
+              defaultValue={loadedUser.email}
               sx={{ m: 1, width: "100%", mb: 3 }}
               name="email"
-              value={formData.email}
+              valye={formData.email}
               onChange={handleInputChange}
               InputProps={{
                 startAdornment: (
@@ -321,6 +327,7 @@ const UpdateUser = () => {
                   label="Enter photo url"
                   id="outlined-start-adornment"
                   sx={{ m: 1, width: "100%" }}
+                  defaultValue={loadedUser.photoUrl}
                   name="photoUrl"
                   valye={formData.photoUrl}
                   onChange={handleInputChange}
@@ -337,6 +344,7 @@ const UpdateUser = () => {
                   id="outlined-start-adornment"
                   sx={{ m: 1, width: "100%" }}
                   name="phone"
+                  defaultValue={loadedUser.phone}
                   valye={formData.phone}
                   onChange={handleInputChange}
                   InputProps={{
@@ -357,6 +365,7 @@ const UpdateUser = () => {
                   aria-labelledby="demo-row-radio-buttons-group-label"
                   name="row-radio-buttons-group"
                   onChange={handleRadioChange}
+                  defaultValue={loadedUser.gender}
                 >
                   <FormControlLabel
                     value="Female"
@@ -384,6 +393,7 @@ const UpdateUser = () => {
                   aria-labelledby="demo-row-radio-buttons-group-label"
                   name="row-radio-buttons-group"
                   onChange={handleActiveStatus}
+                  defaultValue={loadedUser.isActive}
                 >
                   <FormControlLabel
                     value="Active"
