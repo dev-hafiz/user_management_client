@@ -49,10 +49,11 @@ const AddUser = () => {
   const [gender, setGender] = useState(null);
   const [isActive, setIsActive] = useState(null);
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    age: "",
-    height: "",
+    photoUrl: "",
+    phone: "",
   });
 
   // form handler
@@ -172,19 +173,39 @@ const AddUser = () => {
           <img width="50%" style={{ marginBottom: "30px" }} src={logo} />
 
           <Box sx={{ width: "70%" }}>
-            <TextField
-              label="Enter your name"
-              id="outlined-start-adornment"
-              sx={{ m: 1, width: "100%" }}
-              name="name"
-              valye={formData.name}
-              onChange={handleInputChange}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">Name: </InputAdornment>
-                ),
-              }}
-            />
+            <Grid container spacing={2}>
+              <Grid item xs={12} lg={6}>
+                <TextField
+                  label="Enter first name"
+                  id="outlined-start-adornment"
+                  sx={{ m: 1, width: "100%" }}
+                  name="firstName"
+                  valye={formData.firstName}
+                  onChange={handleInputChange}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">First: </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <TextField
+                  label="Enter last name"
+                  id="outlined-start-adornment"
+                  sx={{ m: 1, width: "100%" }}
+                  name="lastName"
+                  valye={formData.lastName}
+                  onChange={handleInputChange}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">Last: </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+            </Grid>
+
             <TextField
               label="Enter your email"
               id="outlined-start-adornment"
@@ -201,30 +222,30 @@ const AddUser = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} lg={6}>
                 <TextField
-                  label="Enter your age"
+                  label="Enter photo url"
                   id="outlined-start-adornment"
                   sx={{ m: 1, width: "100%" }}
-                  name="age"
-                  valye={formData.age}
+                  name="photoUrl"
+                  valye={formData.photoUrl}
                   onChange={handleInputChange}
                   InputProps={{
                     startAdornment: (
-                      <InputAdornment position="start">Age: </InputAdornment>
+                      <InputAdornment position="start">Url: </InputAdornment>
                     ),
                   }}
                 />
               </Grid>
               <Grid item xs={12} lg={6}>
                 <TextField
-                  label="Enter your height"
+                  label="Enter  phone  number"
                   id="outlined-start-adornment"
                   sx={{ m: 1, width: "100%" }}
-                  name="height"
-                  valye={formData.height}
+                  name="phone"
+                  valye={formData.phone}
                   onChange={handleInputChange}
                   InputProps={{
                     startAdornment: (
-                      <InputAdornment position="start">Height: </InputAdornment>
+                      <InputAdornment position="start">Phone: </InputAdornment>
                     ),
                   }}
                 />

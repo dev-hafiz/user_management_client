@@ -77,8 +77,7 @@ const Users = () => {
                 <StyledTableCell>Name</StyledTableCell>
                 <StyledTableCell align="center">Email</StyledTableCell>
                 <StyledTableCell align="center">Status</StyledTableCell>
-                <StyledTableCell align="center">Age</StyledTableCell>
-                <StyledTableCell align="center">Height</StyledTableCell>
+                <StyledTableCell align="center">Phone</StyledTableCell>
                 <StyledTableCell align="center">Gender</StyledTableCell>
                 <StyledTableCell align="center">Delete</StyledTableCell>
                 <StyledTableCell align="center">Update</StyledTableCell>
@@ -86,20 +85,15 @@ const Users = () => {
             </TableHead>
             <TableBody>
               {users.map((row) => (
-                <StyledTableRow key={row?.name}>
+                <StyledTableRow key={row?._id}>
                   <StyledTableCell component="th" scope="row">
-                    {row?.name}
+                    {row?.firstName + " " + row.lastName}
                   </StyledTableCell>
                   <StyledTableCell align="center">{row?.email}</StyledTableCell>
                   <StyledTableCell align="center">
                     {row?.isActive}
                   </StyledTableCell>
-                  <StyledTableCell align="center">
-                    {row?.age} yrs
-                  </StyledTableCell>
-                  <StyledTableCell align="center">
-                    {row?.height}
-                  </StyledTableCell>
+                  <StyledTableCell align="center">{row?.phone}</StyledTableCell>
                   <StyledTableCell align="center">
                     {row?.gender}
                   </StyledTableCell>
