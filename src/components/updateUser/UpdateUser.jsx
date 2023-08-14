@@ -49,7 +49,7 @@ const useStyles = makeStyles({
   },
   profileBox: {
     width: "180px",
-    height: "250px",
+    height: "240px",
     marginTop: "110px",
   },
   cameraBtn: {
@@ -271,8 +271,11 @@ const UpdateUser = () => {
       </Grid>
       <Grid item xs={12} lg={6}>
         <Box className={classes.rightBox}>
+          <Typography sx={{ fontSize: "20px" }} variant="h5">
+            Edit your profile
+          </Typography>
           <Box sx={{ width: "100%" }}>
-            <Grid sx={{ mt: 3 }} container spacing={2}>
+            <Grid sx={{ mt: 2 }} container spacing={2}>
               <Grid item sx={{ mb: 3 }} xs={12} lg={6}>
                 <TextField
                   label="Enter first name"
@@ -424,7 +427,8 @@ const UpdateUser = () => {
           <img
             style={{ borderRadius: "20px" }}
             width="100%"
-            src="https://fashionvaluechain.com/wp-content/uploads/2023/01/Pietro-Beccari-the-new-CEO-of-Louis-Vuitton.jpg"
+            height="100%"
+            src={loadedUser.photoUrl}
           />
           <button className={classes.cameraBtn}>
             <PhotoCameraIcon />

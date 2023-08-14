@@ -21,6 +21,8 @@
 |-----------------------|---------------------------|
 |![Delete](https://i.ibb.co/hczQYth/Capture.png)| ![Delete](https://i.ibb.co/JvBm4pH/delete.png)|
 
+## Update Profile Information
+![User Profile ](https://i.ibb.co/TqzQbVv/Capture.png)
 
 
 
