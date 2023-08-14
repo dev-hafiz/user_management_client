@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../header/Navbar";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
@@ -105,7 +105,9 @@ const Users = () => {
                     <DeleteIcon />
                   </StyledTableCell>
                   <StyledTableCell align="center">
-                    <DriveFileRenameOutlineIcon />
+                    <Link style={{ color: "black" }} to={`/users/${row._id}`}>
+                      <DriveFileRenameOutlineIcon />
+                    </Link>
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
