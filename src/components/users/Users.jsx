@@ -12,6 +12,7 @@ import Paper from "@mui/material/Paper";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,6 +36,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const Users = () => {
   const loadedUsers = useLoaderData();
+  const [users, setUsers] = useState(loadedUsers);
 
   const handleDeleteUser = (_id) => {
     Swal.fire({
@@ -53,6 +55,8 @@ const Users = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
+              const remaining = users.filter((user) => user._id !== _id);
+              setUsers(remaining);
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
             }
           });
@@ -81,7 +85,7 @@ const Users = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {loadedUsers.map((row) => (
+              {users.map((row) => (
                 <StyledTableRow key={row?.name}>
                   <StyledTableCell component="th" scope="row">
                     {row?.name}

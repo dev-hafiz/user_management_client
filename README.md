@@ -16,3 +16,13 @@
 
 ## Users From Database
 ![Users](https://i.ibb.co/GdMgXnK/Users.png)
+
+
+| Delete Permission     | Delete Success            |
+|-----------------------|---------------------------|
+|![Delete](https://i.ibb.co/ftGF7HV/deletepopup.png)| ![Delete](https://i.ibb.co/BwKSjtZ/delete-Success.png)|
+
+
+
+
+
