@@ -11,6 +11,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
+import Swal from "sweetalert2";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -34,6 +35,31 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const Users = () => {
   const loadedUsers = useLoaderData();
+
+  const handleDeleteUser = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/users/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
+  };
+
   return (
     <>
       <div>
@@ -73,7 +99,11 @@ const Users = () => {
                   <StyledTableCell align="center">
                     {row?.gender}
                   </StyledTableCell>
-                  <StyledTableCell align="center">
+                  <StyledTableCell
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => handleDeleteUser(row?._id)}
+                    align="center"
+                  >
                     <DeleteIcon />
                   </StyledTableCell>
                   <StyledTableCell align="center">
