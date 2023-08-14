@@ -1,4 +1,5 @@
 import { Grid, Box, Typography, Paper } from "@mui/material";
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import { makeStyles } from "@mui/styles";
 import PersonIcon from "@mui/icons-material/Person";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -49,6 +50,17 @@ const useStyles = makeStyles({
     width: "180px",
     height: "250px",
     marginTop: "110px",
+  },
+  cameraBtn: {
+    display: "flex",
+    border: ".5px solid #FFD866",
+    background: " none",
+    alignItems: "center",
+    width: "180px",
+    marginTop: "8px",
+    paddingLeft: "10px",
+    borderRadius: "6px",
+    justifyContent: "center",
   },
 });
 
@@ -400,10 +412,14 @@ const UpdateUser = () => {
       >
         <Box className={classes.profileBox}>
           <img
-            style={{ borderRadius: "30px" }}
+            style={{ borderRadius: "20px" }}
             width="100%"
             src="https://fashionvaluechain.com/wp-content/uploads/2023/01/Pietro-Beccari-the-new-CEO-of-Louis-Vuitton.jpg"
           />
+          <button className={classes.cameraBtn}>
+            <PhotoCameraIcon />
+            <p style={{ marginLeft: " 6px" }}>Profile picture</p>
+          </button>
         </Box>
       </Grid>
     </Grid>
