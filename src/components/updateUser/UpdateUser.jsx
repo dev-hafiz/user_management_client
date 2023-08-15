@@ -106,7 +106,7 @@ const UpdateUser = () => {
 
   //handle Create user
   const handleCreateUser = () => {
-    fetch(`http://localhost:5000/users/${_id}`, {
+    fetch(`http://localhost:5000/users/${loadedUser._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -115,10 +115,10 @@ const UpdateUser = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
-            title: "User Created Successfully",
-            text: "Do you want to continue ❓",
+            title: "Profile Updated",
+            text: "Keep continue",
             icon: "success",
             confirmButtonText: "Ok",
           });

@@ -24,6 +24,11 @@
 ## Update Profile Information
 ![User Profile ](https://i.ibb.co/DR8s84b/Capture.png)
 
+| Update Success        | Updated            |
+|-----------------------|---------------------------|
+|![Delete](https://i.ibb.co/4gtQYpW/updateSu.png)| ![Delete](https://i.ibb.co/Bt3X7wm/su.png)|
+
+
 
 
 
