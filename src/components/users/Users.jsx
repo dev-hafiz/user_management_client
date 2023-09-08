@@ -28,15 +28,14 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
+
   "&:last-child td, &:last-child th": {
     border: 0,
   },
 }));
 
 const Users = () => {
-  
-  // Loader and user State 
+  // Loader and user State
   const loadedUsers = useLoaderData();
   const [users, setUsers] = useState(loadedUsers);
 
