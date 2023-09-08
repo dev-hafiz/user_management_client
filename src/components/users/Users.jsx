@@ -35,6 +35,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const Users = () => {
+  
+  // Loader and user State 
   const loadedUsers = useLoaderData();
   const [users, setUsers] = useState(loadedUsers);
 
